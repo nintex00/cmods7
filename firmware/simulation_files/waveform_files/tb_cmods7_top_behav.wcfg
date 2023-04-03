@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_cmods7_top_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_cmods7_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="92907626fs"></ZoomStartTime>
+      <ZoomEndTime time="1731138475fs"></ZoomEndTime>
+      <Cursor1Time time="1458100000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="338"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="6" />
+   <wave_markers>
+      <marker time="999840041660000" label="" />
+   </wave_markers>
+   <wvobject fp_name="group14" type="group">
+      <obj_property name="label">tb_cmods7_top</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_cmods7_top/clk_12mhz" type="logic">
+         <obj_property name="ElementShortName">clk_12mhz</obj_property>
+         <obj_property name="ObjectShortName">clk_12mhz</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/sys_rst" type="logic">
+         <obj_property name="ElementShortName">sys_rst</obj_property>
+         <obj_property name="ObjectShortName">sys_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/gpio" type="logic">
+         <obj_property name="ElementShortName">gpio</obj_property>
+         <obj_property name="ObjectShortName">gpio</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group91" type="group">
+      <obj_property name="label">cmods7_top</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/sys_clk_12mhz_i" type="logic">
+         <obj_property name="ElementShortName">sys_clk_12mhz_i</obj_property>
+         <obj_property name="ObjectShortName">sys_clk_12mhz_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/sys_rst_i" type="logic">
+         <obj_property name="ElementShortName">sys_rst_i</obj_property>
+         <obj_property name="ObjectShortName">sys_rst_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/gpio_i" type="logic">
+         <obj_property name="ElementShortName">gpio_i</obj_property>
+         <obj_property name="ObjectShortName">gpio_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/led_o" type="array">
+         <obj_property name="ElementShortName">led_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">led_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/led_blue_n_o" type="logic">
+         <obj_property name="ElementShortName">led_blue_n_o</obj_property>
+         <obj_property name="ObjectShortName">led_blue_n_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/led_green_n_o" type="logic">
+         <obj_property name="ElementShortName">led_green_n_o</obj_property>
+         <obj_property name="ObjectShortName">led_green_n_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/led_red_n_o" type="logic">
+         <obj_property name="ElementShortName">led_red_n_o</obj_property>
+         <obj_property name="ObjectShortName">led_red_n_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/usb_uart_rx_i" type="logic">
+         <obj_property name="ElementShortName">usb_uart_rx_i</obj_property>
+         <obj_property name="ObjectShortName">usb_uart_rx_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/usb_uart_tx_o" type="logic">
+         <obj_property name="ElementShortName">usb_uart_tx_o</obj_property>
+         <obj_property name="ObjectShortName">usb_uart_tx_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/vaux5p_i" type="logic">
+         <obj_property name="ElementShortName">vaux5p_i</obj_property>
+         <obj_property name="ObjectShortName">vaux5p_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/vaux5n_i" type="logic">
+         <obj_property name="ElementShortName">vaux5n_i</obj_property>
+         <obj_property name="ObjectShortName">vaux5n_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_dina_o" type="logic">
+         <obj_property name="ElementShortName">dac_dina_o</obj_property>
+         <obj_property name="ObjectShortName">dac_dina_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_dinb_o" type="logic">
+         <obj_property name="ElementShortName">dac_dinb_o</obj_property>
+         <obj_property name="ObjectShortName">dac_dinb_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_sclk_o" type="logic">
+         <obj_property name="ElementShortName">dac_sclk_o</obj_property>
+         <obj_property name="ObjectShortName">dac_sclk_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_sync_n_o" type="logic">
+         <obj_property name="ElementShortName">dac_sync_n_o</obj_property>
+         <obj_property name="ObjectShortName">dac_sync_n_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/sys_clk_12mhz" type="logic">
+         <obj_property name="ElementShortName">sys_clk_12mhz</obj_property>
+         <obj_property name="ObjectShortName">sys_clk_12mhz</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/sys_rst" type="logic">
+         <obj_property name="ElementShortName">sys_rst</obj_property>
+         <obj_property name="ObjectShortName">sys_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/sys_clk_freq" type="other">
+         <obj_property name="ElementShortName">sys_clk_freq</obj_property>
+         <obj_property name="ObjectShortName">sys_clk_freq</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/baud_rate" type="other">
+         <obj_property name="ElementShortName">baud_rate</obj_property>
+         <obj_property name="ObjectShortName">baud_rate</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/uart_d_width" type="other">
+         <obj_property name="ElementShortName">uart_d_width</obj_property>
+         <obj_property name="ObjectShortName">uart_d_width</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group108" type="group">
+      <obj_property name="label">dac_driver</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/rst_i" type="logic">
+         <obj_property name="ElementShortName">rst_i</obj_property>
+         <obj_property name="ObjectShortName">rst_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/gpio_i" type="logic">
+         <obj_property name="ElementShortName">gpio_i</obj_property>
+         <obj_property name="ObjectShortName">gpio_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_seta_i" type="array">
+         <obj_property name="ElementShortName">dac_seta_i[11:0]</obj_property>
+         <obj_property name="ObjectShortName">dac_seta_i[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_setb_i" type="array">
+         <obj_property name="ElementShortName">dac_setb_i[11:0]</obj_property>
+         <obj_property name="ObjectShortName">dac_setb_i[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_dina_o" type="logic">
+         <obj_property name="ElementShortName">dac_dina_o</obj_property>
+         <obj_property name="ObjectShortName">dac_dina_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_dinb_o" type="logic">
+         <obj_property name="ElementShortName">dac_dinb_o</obj_property>
+         <obj_property name="ObjectShortName">dac_dinb_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_sclk_o" type="logic">
+         <obj_property name="ElementShortName">dac_sclk_o</obj_property>
+         <obj_property name="ObjectShortName">dac_sclk_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_sync_n_o" type="logic">
+         <obj_property name="ElementShortName">dac_sync_n_o</obj_property>
+         <obj_property name="ObjectShortName">dac_sync_n_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_sclk" type="logic">
+         <obj_property name="ElementShortName">dac_sclk</obj_property>
+         <obj_property name="ObjectShortName">dac_sclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_sync_n" type="logic">
+         <obj_property name="ElementShortName">dac_sync_n</obj_property>
+         <obj_property name="ObjectShortName">dac_sync_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_dina_vec" type="array">
+         <obj_property name="ElementShortName">dac_dina_vec[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dac_dina_vec[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_dinb_vec" type="array">
+         <obj_property name="ElementShortName">dac_dinb_vec[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dac_dinb_vec[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_cntr" type="other">
+         <obj_property name="ElementShortName">dac_cntr</obj_property>
+         <obj_property name="ObjectShortName">dac_cntr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/gpio_dl" type="logic">
+         <obj_property name="ElementShortName">gpio_dl</obj_property>
+         <obj_property name="ObjectShortName">gpio_dl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/dac_state" type="other">
+         <obj_property name="ElementShortName">dac_state</obj_property>
+         <obj_property name="ObjectShortName">dac_state</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group147" type="group">
+      <obj_property name="label">clocks_and_resets</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/clocks_and_resets_inst/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/clocks_and_resets_inst/rst_i" type="logic">
+         <obj_property name="ElementShortName">rst_i</obj_property>
+         <obj_property name="ObjectShortName">rst_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/clocks_and_resets_inst/clk_o" type="logic">
+         <obj_property name="ElementShortName">clk_o</obj_property>
+         <obj_property name="ObjectShortName">clk_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/clocks_and_resets_inst/rst_o" type="logic">
+         <obj_property name="ElementShortName">rst_o</obj_property>
+         <obj_property name="ObjectShortName">rst_o</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group142" type="group">
+      <obj_property name="label">uart</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="group205" type="group">
+      <obj_property name="label">blink_leds</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/rst_i" type="logic">
+         <obj_property name="ElementShortName">rst_i</obj_property>
+         <obj_property name="ObjectShortName">rst_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/led_o" type="array">
+         <obj_property name="ElementShortName">led_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">led_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/led_blue_n_o" type="logic">
+         <obj_property name="ElementShortName">led_blue_n_o</obj_property>
+         <obj_property name="ObjectShortName">led_blue_n_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/led_green_n_o" type="logic">
+         <obj_property name="ElementShortName">led_green_n_o</obj_property>
+         <obj_property name="ObjectShortName">led_green_n_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/clk_1hz" type="logic">
+         <obj_property name="ElementShortName">clk_1hz</obj_property>
+         <obj_property name="ObjectShortName">clk_1hz</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/led_red_n_o" type="logic">
+         <obj_property name="ElementShortName">led_red_n_o</obj_property>
+         <obj_property name="ObjectShortName">led_red_n_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/cntr_1hz" type="other">
+         <obj_property name="ElementShortName">cntr_1hz</obj_property>
+         <obj_property name="ObjectShortName">cntr_1hz</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/led_state" type="other">
+         <obj_property name="ElementShortName">led_state</obj_property>
+         <obj_property name="ObjectShortName">led_state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/sys_clk_freq" type="other">
+         <obj_property name="ElementShortName">sys_clk_freq</obj_property>
+         <obj_property name="ObjectShortName">sys_clk_freq</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/duty_i" type="array">
+         <obj_property name="ElementShortName">duty_i[7:0]</obj_property>
+         <obj_property name="ObjectShortName">duty_i[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/cnt_reg" type="array">
+         <obj_property name="ElementShortName">cnt_reg[7:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_reg[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/pwm_reg" type="logic">
+         <obj_property name="ElementShortName">pwm_reg</obj_property>
+         <obj_property name="ObjectShortName">pwm_reg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/duty_reg" type="array">
+         <obj_property name="ElementShortName">duty_reg[7:0]</obj_property>
+         <obj_property name="ObjectShortName">duty_reg[7:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
