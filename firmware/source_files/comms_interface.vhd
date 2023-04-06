@@ -24,7 +24,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity comms_interface is
     generic(
         sys_clk_freq : integer := 12_000_000; -- System clock frequency
+        fpga_rev     : std_logic_vector(23 downto 0) := x"230404"; -- Revision date.
         baud_rate    : integer := 115_200;    -- Baud rate in bits per second
+        os_rate      : integer := 4;          -- Oversampling rate to find center of receive bits (in samples per baud period)
         uart_d_width : integer := 8           -- UART Data bus width
     );
     port ( 
@@ -59,6 +61,7 @@ begin
     generic map(
         clk_freq  => sys_clk_freq,  
         baud_rate => baud_rate,
+        os_rate   => os_rate,
         d_width   => uart_d_width   
     )
     port map (
@@ -80,7 +83,8 @@ begin
    -- Packet encode/decode module for handling bytes received and transmitted from UART.
    packet_encode_decode_inst : entity work.packet_encode_decode
     generic map(
-        uart_d_width => uart_d_width   
+        fpga_rev     => fpga_rev,
+        uart_d_width => uart_d_width  
     )
     port map (
     -- Inputs

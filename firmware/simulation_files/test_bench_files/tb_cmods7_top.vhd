@@ -58,8 +58,12 @@ begin
 	cmods7_top_inst : entity work.cmods7_top
     generic map (
         sys_clk_freq  => 12_000_000,
-        baud_rate     => 115_200,
-        uart_d_width  => 8     
+        
+        fpga_rev      => x"230404",
+        
+        baud_rate     => 1_000_000,
+        os_rate       => 4,
+        uart_d_width  => 8 
     )
 	port map( 
         -- Clock
@@ -78,16 +82,25 @@ begin
         -- USB UART
         usb_uart_rx_i   => '1', -- If '1', then uart module will not expect bytes received.
         usb_uart_tx_o   => OPEN,
+
+        -- RS422 UART
+        rs422_uart_rx_i   => '1', -- If '1', then uart module will not expect bytes received.
+        rs422_uart_tx_o   => OPEN,
         
         -- XADC
         vaux5p_i        => '1',
         vaux5n_i        => '0',
+        vaux12p_i       => '1',
+        vaux12n_i       => '0',
         
         -- x2 DACs from PMOD D2A board, MFPN: DAC121S101/-Q1.
         dac_dina_o      => OPEN,
         dac_dinb_o      => OPEN,
         dac_sclk_o      => OPEN,
-        dac_sync_n_o    => OPEN
+        dac_sync_n_o    => OPEN,
+        
+        -- Piezo buzzer tone
+        tone_o          => OPEN
 	); 
 
 end Behavioral;

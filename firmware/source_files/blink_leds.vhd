@@ -34,7 +34,7 @@ entity blink_leds is
         clk_i    : in std_logic; -- System clock.
         rst_i    : in std_logic; -- Active-high push-button reset.
         duty_i   : in std_logic_vector(7 downto 0); -- Duty cycle value for pulse width modulation (PWM)) of RGB LED in 8-bits.
-        
+
         -- Outputs
         led_o           : out std_logic_vector(3 downto 0) := (others => '0'); -- Active-high Four general purpose LEDs.
         led_blue_n_o    : out std_logic := '1';  -- Active-low Blue LED of RGB LED.
@@ -61,8 +61,7 @@ architecture Behavioral of blink_leds is
     signal pwm_reg  : std_logic;
     signal duty_reg : unsigned(7 downto 0);  
 begin
-
-
+    
     -- 1 Hz generated from 12 MHz clock
 	clk_1Hz_proc : process (clk_i, rst_i)
 	begin
@@ -71,7 +70,7 @@ begin
             clk_1hz  <= '0';
             
 		elsif rising_edge(clk_i) then
-			if(cntr_1Hz >= SYS_CLK_FREQ) then
+			if(cntr_1Hz >= sys_clk_freq) then
                 cntr_1Hz <= 0;   
                 clk_1hz   <= not(clk_1hz);
             else
@@ -79,12 +78,11 @@ begin
             end if;
 		end if;
 	end process clk_1Hz_proc;
-
-
-    led_o(0) <= clk_1hz;
-    led_o(1) <= clk_1hz;
-    led_o(2) <= clk_1hz;
-    led_o(3) <= clk_1hz;
+    
+    led_o(0)  <= clk_1hz;
+    led_o(1)  <= clk_1hz;
+    led_o(2)  <= clk_1hz;
+    led_o(3)  <= clk_1hz;
     
     
     -- Finite state machine for RGB LED

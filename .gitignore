@@ -13,6 +13,7 @@
 *.svn
 *.zip
 *.bak
+*.tif
 
 ## My stuff
 /archive

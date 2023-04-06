@@ -21,6 +21,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.all;
+use work.rad_hard_pkg.ALL;
 
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
@@ -28,7 +29,12 @@ use UNISIM.VCOMPONENTS.ALL;
 entity cmods7_top is
     generic (
         sys_clk_freq : integer := 12_000_000; -- System clock frequency
+        
+        fpga_rev     : std_logic_vector(23 downto 0) := x"230405"; -- Revision date.
+        
+        -- UART generics
         baud_rate    : integer := 1_000_000;  -- Baud rate in bits per second
+        os_rate      : integer := 4;          -- Oversampling rate to find center of receive bits (in samples per baud period)
         uart_d_width : integer := 8           -- UART Data bus width
     );
     port ( 
@@ -63,7 +69,10 @@ entity cmods7_top is
         dac_dina_o      : out std_logic; -- Serial data input for DAC A (IC1).
         dac_dinb_o      : out std_logic; -- Serial data input for DAC B (IC2).
         dac_sclk_o      : out std_logic; -- For the two DACs. Serial clock input clocked on falling edges of this pin.
-        dac_sync_n_o    : out std_logic  -- For the two DACs. Active-low frame synchronization input for data input. When '0', the input shift register is enabled to transfer data on falling edge of dac_sclk_o.                 
+        dac_sync_n_o    : out std_logic; -- For the two DACs. Active-low frame synchronization input for data input. When '0', the input shift register is enabled to transfer data on falling edge of dac_sclk_o.                 
+        
+        -- Piezo buzzer to generate music
+        tone_o          : out std_logic  -- Piezo buzzer tone for different frequencies.
          );
 end cmods7_top;
 
@@ -73,6 +82,11 @@ architecture Behavioral of cmods7_top is
     signal sys_clk_12mhz : std_logic := '0'; -- Buffered 12 MHz from crystal oscillator.
     signal sys_rst       : std_logic;        -- Active-high reset.
     
+    signal tmr_test      : std_logic := '1'; 
+    
+    -- Register pass through signals
+    signal data_reg_in                 : std_logic_vector(31 downto 0)  := (others => '0');
+    signal data_reg_out                : std_logic_vector(31 downto 0)  := (others => '0');  
 begin
    
      -- Clocks and resets module for handling clocks and resets.
@@ -109,7 +123,9 @@ begin
    comms_interface_inst : entity work.comms_interface
      generic map(
         sys_clk_freq => sys_clk_freq,
+        fpga_rev     => fpga_rev,
         baud_rate    => baud_rate,
+        os_rate      => os_rate,
         uart_d_width => uart_d_width
      )
      port map(
@@ -151,7 +167,53 @@ begin
         dac_dinb_o   => dac_dinb_o,
         dac_sclk_o   => dac_sclk_o,
         dac_sync_n_o => dac_sync_n_o  
-     ); 
+     );
+     
+  -- Piezo buzzer to generate music
+   piezo_buzzer_inst : entity work.piezo_buzzer
+     generic map(
+        sys_clk_freq => sys_clk_freq
+     )
+     port map(
+        -- Clocks and reset
+        clk_i     => sys_clk_12mhz,
+        rst_i     => sys_rst,
+        gpio_i    => gpio_i,
         
-       
+        tone_o    => tone_o
+     ); 
+     
+    -- Register passthrough FPGA fabric
+    reg_array_inst : entity work.reg
+    generic map(
+      reg_width     => 32,
+      reg_depth     => 10--1000--20000
+    )
+    port map (
+        clk			=> sys_clk_12mhz,
+        rst		    => sys_rst,
+        data_in		=> data_reg_in,
+        data_out    => data_reg_out
+    );  
+    
+    -- Apply tmr to a test register 
+    tmr_inst : tmr
+    generic map(
+        reg_depth => 0
+    )
+    port map (
+        clk_i => sys_clk_12mhz,
+        rst_i => sys_rst,
+        
+        data_i(0) => tmr_test,
+        data_o => OPEN
+    ); 
+    
+    
+    -- Apply hamming encoding to a test register
+    hamming_encoding_inst : entity work.hamming_encoding
+    port map (
+        data_i    => data_reg_in(4 downto 0),
+        encoded_o => data_reg_out(7 downto 0)
+    );   
 end Behavioral;

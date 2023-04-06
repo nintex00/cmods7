@@ -30,7 +30,7 @@ entity uart is
   generic (
     clk_freq  :  integer    := 12_000_000;  -- Frequency of system clock in Hertz
     baud_rate :  integer    := 19_200;      -- Data link baud rate in bits/second
-    os_rate   :  integer    := 4;          -- Oversampling rate to find center of receive bits (in samples per baud period)
+    os_rate   :  integer    := 4;           -- Oversampling rate to find center of receive bits (in samples per baud period)
     d_width   :  integer    := 8;           -- Data bus width
     parity    :  integer    := 1;           -- 0 for no parity, 1 for parity
     parity_eo :  std_logic  := '1');        -- '0' for even, '1' for odd parity

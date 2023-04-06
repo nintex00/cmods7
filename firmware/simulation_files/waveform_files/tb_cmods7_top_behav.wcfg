@@ -5,27 +5,28 @@
    <db_ref_list>
       <db_ref path="tb_cmods7_top_behav.wdb" id="1">
          <top_modules>
+            <top_module name="glbl" />
+            <top_module name="rad_hard_pkg" />
             <top_module name="tb_cmods7_top" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="92907626fs"></ZoomStartTime>
-      <ZoomEndTime time="1731138475fs"></ZoomEndTime>
-      <Cursor1Time time="1458100000fs"></Cursor1Time>
+      <ZoomStartTime time="32332311fs"></ZoomStartTime>
+      <ZoomEndTime time="1193533538fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="338"></NameColumnWidth>
+      <NameColumnWidth column_width="328"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="9" />
    <wave_markers>
       <marker time="999840041660000" label="" />
    </wave_markers>
    <wvobject fp_name="group14" type="group">
       <obj_property name="label">tb_cmods7_top</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_cmods7_top/clk_12mhz" type="logic">
          <obj_property name="ElementShortName">clk_12mhz</obj_property>
          <obj_property name="ObjectShortName">clk_12mhz</obj_property>
@@ -39,10 +40,161 @@
          <obj_property name="ObjectShortName">gpio</obj_property>
       </wvobject>
    </wvobject>
+   <wvobject fp_name="group461" type="group">
+      <obj_property name="label">bram</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/blk_mem_inst/clka" type="logic">
+         <obj_property name="ElementShortName">clka</obj_property>
+         <obj_property name="ObjectShortName">clka</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/blk_mem_inst/ena" type="logic">
+         <obj_property name="ElementShortName">ena</obj_property>
+         <obj_property name="ObjectShortName">ena</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/blk_mem_inst/wea" type="array">
+         <obj_property name="ElementShortName">wea[0:0]</obj_property>
+         <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/blk_mem_inst/addra" type="array">
+         <obj_property name="ElementShortName">addra[15:0]</obj_property>
+         <obj_property name="ObjectShortName">addra[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/blk_mem_inst/dina" type="array">
+         <obj_property name="ElementShortName">dina[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dina[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/blk_mem_inst/clkb" type="logic">
+         <obj_property name="ElementShortName">clkb</obj_property>
+         <obj_property name="ObjectShortName">clkb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/blk_mem_inst/enb" type="logic">
+         <obj_property name="ElementShortName">enb</obj_property>
+         <obj_property name="ObjectShortName">enb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/blk_mem_inst/addrb" type="array">
+         <obj_property name="ElementShortName">addrb[15:0]</obj_property>
+         <obj_property name="ObjectShortName">addrb[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/blk_mem_inst/doutb" type="array">
+         <obj_property name="ElementShortName">doutb[15:0]</obj_property>
+         <obj_property name="ObjectShortName">doutb[15:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group451" type="group">
+      <obj_property name="label">packet_encode_decode</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/rst_i" type="logic">
+         <obj_property name="ElementShortName">rst_i</obj_property>
+         <obj_property name="ObjectShortName">rst_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/rx_busy_i" type="logic">
+         <obj_property name="ElementShortName">rx_busy_i</obj_property>
+         <obj_property name="ObjectShortName">rx_busy_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/rx_error_i" type="logic">
+         <obj_property name="ElementShortName">rx_error_i</obj_property>
+         <obj_property name="ObjectShortName">rx_error_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/rx_data_i" type="array">
+         <obj_property name="ElementShortName">rx_data_i[7:0]</obj_property>
+         <obj_property name="ObjectShortName">rx_data_i[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/tx_busy_i" type="logic">
+         <obj_property name="ElementShortName">tx_busy_i</obj_property>
+         <obj_property name="ObjectShortName">tx_busy_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/tx_ena_o" type="logic">
+         <obj_property name="ElementShortName">tx_ena_o</obj_property>
+         <obj_property name="ObjectShortName">tx_ena_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/tx_data_o" type="array">
+         <obj_property name="ElementShortName">tx_data_o[7:0]</obj_property>
+         <obj_property name="ObjectShortName">tx_data_o[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/uart_state" type="other">
+         <obj_property name="ElementShortName">uart_state</obj_property>
+         <obj_property name="ObjectShortName">uart_state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/test_data_cntr" type="array">
+         <obj_property name="ElementShortName">test_data_cntr[22:0]</obj_property>
+         <obj_property name="ObjectShortName">test_data_cntr[22:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/test_data" type="array">
+         <obj_property name="ElementShortName">test_data[22:0]</obj_property>
+         <obj_property name="ObjectShortName">test_data[22:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/tx_busy" type="logic">
+         <obj_property name="ElementShortName">tx_busy</obj_property>
+         <obj_property name="ObjectShortName">tx_busy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/tx_ena" type="logic">
+         <obj_property name="ElementShortName">tx_ena</obj_property>
+         <obj_property name="ObjectShortName">tx_ena</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/rx_busy" type="logic">
+         <obj_property name="ElementShortName">rx_busy</obj_property>
+         <obj_property name="ObjectShortName">rx_busy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/data_16b" type="array">
+         <obj_property name="ElementShortName">data_16b[15:0]</obj_property>
+         <obj_property name="ObjectShortName">data_16b[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/data_8b" type="array">
+         <obj_property name="ElementShortName">data_8b[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_8b[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/wr_en" type="logic">
+         <obj_property name="ElementShortName">wr_en</obj_property>
+         <obj_property name="ObjectShortName">wr_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/rd_en" type="logic">
+         <obj_property name="ElementShortName">rd_en</obj_property>
+         <obj_property name="ObjectShortName">rd_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/byte_cntr" type="other">
+         <obj_property name="ElementShortName">byte_cntr</obj_property>
+         <obj_property name="ObjectShortName">byte_cntr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/burst_flag" type="logic">
+         <obj_property name="ElementShortName">burst_flag</obj_property>
+         <obj_property name="ObjectShortName">burst_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fpga_rev_flag" type="logic">
+         <obj_property name="ElementShortName">fpga_rev_flag</obj_property>
+         <obj_property name="ObjectShortName">fpga_rev_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/bram_read_addr" type="array">
+         <obj_property name="ElementShortName">bram_read_addr[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bram_read_addr[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/bram_read_data" type="array">
+         <obj_property name="ElementShortName">bram_read_data[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bram_read_data[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/bram_read_en" type="logic">
+         <obj_property name="ElementShortName">bram_read_en</obj_property>
+         <obj_property name="ObjectShortName">bram_read_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/bram_flag" type="logic">
+         <obj_property name="ElementShortName">bram_flag</obj_property>
+         <obj_property name="ObjectShortName">bram_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fpga_rev" type="array">
+         <obj_property name="ElementShortName">fpga_rev[23:0]</obj_property>
+         <obj_property name="ObjectShortName">fpga_rev[23:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/uart_d_width" type="other">
+         <obj_property name="ElementShortName">uart_d_width</obj_property>
+         <obj_property name="ObjectShortName">uart_d_width</obj_property>
+      </wvobject>
+   </wvobject>
    <wvobject fp_name="group91" type="group">
       <obj_property name="label">cmods7_top</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/sys_clk_12mhz_i" type="logic">
          <obj_property name="ElementShortName">sys_clk_12mhz_i</obj_property>
          <obj_property name="ObjectShortName">sys_clk_12mhz_i</obj_property>
@@ -127,7 +279,6 @@
    <wvobject fp_name="group108" type="group">
       <obj_property name="label">dac_driver</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/dac_driver_inst/clk_i" type="logic">
          <obj_property name="ElementShortName">clk_i</obj_property>
          <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -276,6 +427,50 @@
       <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/blink_leds_inst/duty_reg" type="array">
          <obj_property name="ElementShortName">duty_reg[7:0]</obj_property>
          <obj_property name="ObjectShortName">duty_reg[7:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group95" type="group">
+      <obj_property name="label">fifo_burst_readoff</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/srst" type="logic">
+         <obj_property name="ElementShortName">srst</obj_property>
+         <obj_property name="ObjectShortName">srst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/din" type="array">
+         <obj_property name="ElementShortName">din[15:0]</obj_property>
+         <obj_property name="ObjectShortName">din[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/wr_en" type="logic">
+         <obj_property name="ElementShortName">wr_en</obj_property>
+         <obj_property name="ObjectShortName">wr_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/rd_en" type="logic">
+         <obj_property name="ElementShortName">rd_en</obj_property>
+         <obj_property name="ObjectShortName">rd_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/full" type="logic">
+         <obj_property name="ElementShortName">full</obj_property>
+         <obj_property name="ObjectShortName">full</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/dout" type="array">
+         <obj_property name="ElementShortName">dout[7:0]</obj_property>
+         <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/empty" type="logic">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/rd_data_count" type="array">
+         <obj_property name="ElementShortName">rd_data_count[5:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_data_count[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/wr_data_count" type="array">
+         <obj_property name="ElementShortName">wr_data_count[4:0]</obj_property>
+         <obj_property name="ObjectShortName">wr_data_count[4:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
