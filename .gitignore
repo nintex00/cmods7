@@ -9,15 +9,12 @@
 *.dylib
 *.exe
 *.pyc
+*.csv
 *.CVS
 *.svn
 *.zip
 *.bak
 *.tif
-
-## My stuff
-/archive
-/archives
 
 ##Xilinx generated files
 
