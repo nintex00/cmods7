@@ -3,8 +3,6 @@
 -- File:         clocks_and_resets.vhd
 -- Author:       funsten1
 -- Description:  Clocks and resets module for handling clocks and resets.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

@@ -3,8 +3,6 @@
 -- File:         rad_hard_pkg.vhd
 -- Author:       funsten1
 -- Description:  Package for radiation hardened tools for the FPGA.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

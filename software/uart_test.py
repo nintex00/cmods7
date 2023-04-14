@@ -7,8 +7,6 @@ Pyserial is used to construct a serial interface assuming either communication s
 such as RS232 (max 115200 baud rate) or RS422 (max 3 Mbaud for small byte transfer and
 1 Mbaud for large byte transfers).
 file.
-Limitation:   
-Copyright ©:  Lawrence Livermore National Laboratory
 ---------------------------------------------------------
 ---------------------------------------------------------
 

@@ -6,8 +6,6 @@ Description:  Creates an initial block ram csv file whereby a text editor can
 be opened to copy the contents to a coe file for Vivado's block memory generator
 IP core for example.
 file.
-Limitation:   
-Copyright ©:  Lawrence Livermore National Laboratory
 ---------------------------------------------------------
 ---------------------------------------------------------
 

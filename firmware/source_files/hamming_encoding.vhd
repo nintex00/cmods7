@@ -9,9 +9,6 @@
 -- distance of 3, meaning that it can detect up to 2 errors and correct 1 error.
 -- Note that this is just a simple example and in practice, more complex Hamming codes can be 
 -- implemented with larger input sizes and more parity bits.
-
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

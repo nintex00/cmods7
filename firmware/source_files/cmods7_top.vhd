@@ -6,9 +6,7 @@
 -- exercises most if not all functionality on the cmods7 board
 -- from Digilent. The Spartan 7 FPGA used is the XC7S25-1CSGA225C.
 -- The purpose of this project is to showcase how to interface with 
--- a FPGA for projects at LLNL.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
+-- a FPGAs.
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

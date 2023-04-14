@@ -3,8 +3,6 @@
 -- File:         comms_interface.vhd
 -- Author:       funsten1
 -- Description:  Communication interface module that handles both UART and Packet Encode/Decode modules.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

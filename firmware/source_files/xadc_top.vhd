@@ -6,8 +6,6 @@
 -- Since the CMODS7's system clock is 12 MHz, the DRP functionality of the XADC
 -- restricts the sample rate to 231 kSps. With continuous channel sequencing,
 -- the sample rate is decreased. This XADC samples the temperature, VAUX5, and VAUX12 ports.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

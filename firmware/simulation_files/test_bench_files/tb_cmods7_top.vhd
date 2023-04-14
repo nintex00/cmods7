@@ -3,8 +3,6 @@
 -- File:         tb_cmods7_top.vhd
 -- Author:       funsten1
 -- Description:  Test bench for top level firmware for cmods7_top.vhd.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

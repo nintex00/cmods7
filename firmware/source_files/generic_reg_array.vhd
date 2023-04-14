@@ -3,8 +3,6 @@
 -- File:         generic_reg_array.vhd
 -- Author:       funsten1
 -- Description:  Writes a register through a depth of registers across the FPGA fabric to read out.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

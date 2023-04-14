@@ -5,8 +5,6 @@ Author:       funsten1
 Description:  Reads the internal FPGA's block ram (BRAM) and saves the data
 to a csv file and plots the data.
 file.
-Limitation:   
-Copyright ©:  Lawrence Livermore National Laboratory
 ---------------------------------------------------------
 ---------------------------------------------------------
 

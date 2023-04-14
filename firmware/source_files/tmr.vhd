@@ -7,8 +7,6 @@
 -- are then passed through three 2-input AND gates followed by a third stage
 -- OR gate. Thus this builds a voting logic circuit to prevent Single Event
 -- Upsets (SEUs) from affecting a particular register.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

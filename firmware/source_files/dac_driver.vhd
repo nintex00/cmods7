@@ -4,8 +4,6 @@
 -- Author:       funsten1
 -- Description:  x2 DACs from PMOD D2A board, MFPN: DAC121S101/-Q1. 
 -- This is the DAC driver to drive the Serial Peripheral Interface (SPI) logic.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

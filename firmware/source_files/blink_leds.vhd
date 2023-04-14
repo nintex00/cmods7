@@ -4,8 +4,6 @@
 -- Author:       funsten1
 -- Description:  Blinks leds at 1 Hz. For this board, the RGB led toggles for 2 seconds
 -- and the general LEDs blink at 1 Hz.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

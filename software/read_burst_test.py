@@ -5,8 +5,6 @@ Author:       funsten1
 Description:  Reads an internally generated image set of four fraames with 
 1024 x 512 pixels with each pixel representing 2 bytes.
 file.
-Limitation:   
-Copyright ©:  Lawrence Livermore National Laboratory
 ---------------------------------------------------------
 ---------------------------------------------------------
 

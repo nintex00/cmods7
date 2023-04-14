@@ -5,8 +5,6 @@ Author:       funsten1
 Description:  Tests XADC of Digilent CMODS7 Xilinx FPGA Board.
 UART is used to pull temperature, VAUX5, and VAUX12 data and write to a csv
 file.
-Limitation:   
-Copyright ©:  Lawrence Livermore National Laboratory
 ---------------------------------------------------------
 ---------------------------------------------------------
 

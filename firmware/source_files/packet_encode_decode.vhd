@@ -3,8 +3,6 @@
 -- File:         packet_encode_decode.vhd
 -- Author:       funsten1
 -- Description:  Packet encode/decode module for handling bytes received and transmitted from UART.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

@@ -3,8 +3,6 @@
 -- File:         piezo_buzzer.vhd
 -- Author:       funsten1
 -- Description:  Interfaces with piezo buzzer to generate music.
--- Limitation:   
--- Copyright ©:  Lawrence Livermore National Laboratory
 --
 ---------------------------------------------------------
 ---------------------------------------------------------

@@ -4,8 +4,6 @@ File:         solve_system_of_equations.py
 Author:       funsten1
 Description:  Solves a system of equations.
 file.
-Limitation:   
-Copyright ©:  Lawrence Livermore National Laboratory
 ---------------------------------------------------------
 ---------------------------------------------------------
 
