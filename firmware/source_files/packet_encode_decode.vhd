@@ -40,7 +40,13 @@ entity packet_encode_decode is
     
      -- Outputs
      tx_ena_o   :  out  std_logic;                                 -- Initiate transmission
-     tx_data_o  :  out  std_logic_vector(uart_d_width-1 downto 0)  -- Data to transmit
+     tx_data_o  :  out  std_logic_vector(uart_d_width-1 downto 0); -- Data to transmit
+     
+     -- XADC
+     xadc_addr_o : out  std_logic_vector(7 downto 0);              -- XADC address to send to the XADC IP core.
+     xadc_out_i  : in   std_logic_vector(15 downto 0);             -- XADC data read in for wriitng out through UART.
+     xadc_data_valid_i : in  std_logic;                            -- Valid pin from XADC to write data to UART.
+     xadc_enable_o     : out std_logic                             -- Enable flag to tell the XADC, UART is ready to write data.
     
     );
 end packet_encode_decode;
@@ -93,7 +99,7 @@ architecture Behavioral of packet_encode_decode is
     END COMPONENT;
     
     -- State for UART
-    type uart_state_type   is (IDLE, RECEIVE_STATE, COUNT_SAMPLES, READ_FROM_FIFO, WAIT_FOR_READING, ASSIGN_BYTE_FROM_FIFO, ASSIGN_BYTE_1, ASSIGN_BYTE_2, WAIT_FOR_BUSY, TRANSMIT_STATE, WAIT_FOR_BRAM, READ_FROM_BRAM, WAIT_FOR_READING_BRAM_1, WAIT_FOR_READING_BRAM_2, ASSIGN_BYTE1_FROM_BRAM, ASSIGN_BYTE2_FROM_BRAM);						  
+    type uart_state_type   is (IDLE, RECEIVE_STATE, COUNT_SAMPLES, READ_FROM_FIFO, WAIT_FOR_READING, ASSIGN_BYTE_FROM_FIFO, ASSIGN_BYTE_1, ASSIGN_BYTE_2, WAIT_FOR_BUSY, TRANSMIT_STATE, WAIT_FOR_BRAM, READ_FROM_BRAM, WAIT_FOR_READING_BRAM_1, WAIT_FOR_READING_BRAM_2, ASSIGN_BYTE1_FROM_BRAM, ASSIGN_BYTE2_FROM_BRAM, WAIT_FOR_XADC_VALID);						  
     signal uart_state : uart_state_type := IDLE;   
     
     signal test_data_cntr : std_logic_vector(22 downto 0) := (others => '0');
@@ -120,6 +126,8 @@ architecture Behavioral of packet_encode_decode is
     signal bram_read_en    : std_logic := '0'; 
     signal bram_flag       : std_logic := '0';
     
+    -- XADC signals
+    signal xadc_flag       : std_logic := '0';
 begin
 
 
@@ -128,7 +136,7 @@ begin
     rx_busy <= rx_busy_i;
     
  -- UART logic controller
-	uart_logic_proc : process (clk_i, rst_i, rx_busy, rx_data_i, tx_busy, data_8b)
+	uart_logic_proc : process (clk_i, rst_i, rx_busy, rx_data_i, tx_busy, data_8b, xadc_data_valid_i)
 	begin
         if rst_i = '1' then
             tx_ena   <= '0';
@@ -145,12 +153,15 @@ begin
             bram_flag      <= '0';
             bram_read_addr <= (others => '0');
             bram_read_en   <= '0';
+            xadc_flag      <= '0';
+            xadc_enable_o  <= '0';
             
 		elsif rising_edge(clk_i) then
             
             tx_ena <= '0';
             wr_en <= '0';
             rd_en <= '0';
+            xadc_enable_o <= '0';
             
             case uart_state is
 			
@@ -162,6 +173,7 @@ begin
                     burst_flag     <= '0';
                     fpga_rev_flag  <= '0';
                     bram_flag      <= '0';
+                    xadc_flag      <= '0';
                     bram_read_addr <= (others => '0');
                     byte_cntr      <=  0;
                     --bram_read_en   <= '0';      
@@ -192,7 +204,13 @@ begin
                        elsif rx_data_i = x"30" then
                             bram_flag    <= '1';
                             bram_read_en <= '1';
-                            uart_state <= WAIT_FOR_BRAM;
+                            uart_state   <= WAIT_FOR_BRAM;
+                            
+                       elsif (rx_data_i = x"00") or (rx_data_i = x"15") or (rx_data_i = x"1C") then
+                            xadc_addr_o  <= rx_data_i;
+                            xadc_enable_o  <= '1';
+                            uart_state   <= WAIT_FOR_XADC_VALID;
+
                        end if; 
                        
                    end if;
@@ -258,7 +276,11 @@ begin
                     
                 when ASSIGN_BYTE_1 =>
                     tx_ena     <= '1';
-                    tx_data_o  <= fpga_rev(15 downto 8);
+                    if fpga_rev_flag = '1' then
+                        tx_data_o  <= fpga_rev(15 downto 8);
+                    elsif xadc_flag = '1' then
+                        tx_data_o  <= xadc_out_i(7 downto 0);
+                    end if;
                     uart_state <= WAIT_FOR_BUSY;
                     
                 when ASSIGN_BYTE_2 =>
@@ -269,6 +291,13 @@ begin
                 when WAIT_FOR_BUSY => 
                     uart_state <= TRANSMIT_STATE;
                 
+                when WAIT_FOR_XADC_VALID =>
+                    if xadc_data_valid_i = '1' then
+                        xadc_flag    <= '1'; 
+                        tx_ena       <= '1';
+                        tx_data_o    <= xadc_out_i(15 downto 8);
+                        uart_state   <= WAIT_FOR_BUSY;
+                    end if;
                 
                 when TRANSMIT_STATE => 
                     
@@ -298,13 +327,18 @@ begin
                            byte_cntr  <= byte_cntr + 1;
                            uart_state <= ASSIGN_BYTE_1;
                         end if;
+                    elsif xadc_flag = '1' then
+                        if byte_cntr = 1 then
+                            byte_cntr <= 0;
+                            uart_state <= IDLE;
+                        elsif byte_cntr = 0 then
+                            byte_cntr  <= byte_cntr + 1;
+                            uart_state <= ASSIGN_BYTE_1;
+                        end if;
+                            
                     elsif tx_busy = '0' and bram_flag = '1' then
                         if byte_cntr = 1 then
-                            --byte_cntr  <= 0;
-                            --if test_data_cntr >= x"002000" then -- 131072 bytes, 65536 samples
-                            --if test_data_cntr >= x"001000" then  --65536 
                             if bram_read_addr >= x"FFFF" then
-                                --bram_read_en   <= '0';
                                 uart_state     <= IDLE; 
                             else
                                 uart_state <= READ_FROM_BRAM; 
@@ -323,7 +357,7 @@ begin
 		end if;
 	end process uart_logic_proc;
 	
-
+  -- Fifo for reading out the image data generated from the FPGA. Writes 16-bit samples and immediately reads 8 bit samples for UART.
   fifo_burst_read_inst : fifo_16b_write_8b_read_16_depth
   PORT MAP (
     clk => clk_i,
@@ -339,26 +373,27 @@ begin
   );
 	
 	-- UART ILA
-    uart_ila_inst : uart_ila
-    PORT MAP (
-        clk => clk_i,
+   -- uart_ila_inst : uart_ila
+--    PORT MAP (
+--        clk => clk_i,
 
-        probe0(0) => rst_i, 
-        probe1(0) => rd_en, 
-        probe2(0) => tx_ena, 
-        probe3(0) => rx_busy, 
-        probe4(0) => wr_en,
-        probe5    => test_data_cntr,
-        probe6    => data_8b
-    );  
+--        probe0(0) => rst_i, 
+--        probe1(0) => rd_en, 
+--        probe2(0) => tx_ena, 
+--        probe3(0) => rx_busy, 
+--        probe4(0) => wr_en,
+--        probe5    => test_data_cntr,
+--        probe6    => data_8b
+--    );  
 
+    -- Block memory IP core with an internal block memory data of a signal to read out through UART using a COE file.
     blk_mem_inst : blk_mem_gen_0
       PORT MAP (
         -- Write Ports
-        clka    => '0', -- Port A operations are synchronous to this chock.
+        clka    => '0',              -- Port A operations are synchronous to this chock.
         ena     => '1',              -- Enables Read, Write, and reset operations through Port A. 
-        wea(0)  => '0',  -- Enables Write operations through port A. 
-        addra   => (others => '0'), -- Addresses the memory space for port A Write operations.
+        wea(0)  => '0',              -- Enables Write operations through port A. 
+        addra   => (others => '0'),  -- Addresses the memory space for port A Write operations.
         dina    => (others => '0'),  -- Data input to be written into memory through Port A.
         
         -- Read Ports

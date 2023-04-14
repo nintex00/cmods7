@@ -1,3 +1,25 @@
+# -*- coding: utf-8 -*-
+'''
+File:         uart_test.py
+Author:       funsten1
+Description:  Tests UART assuming the FPGA accepts bytes in the form of 11 bits.
+Pyserial is used to construct a serial interface assuming either communication standard
+such as RS232 (max 115200 baud rate) or RS422 (max 3 Mbaud for small byte transfer and
+1 Mbaud for large byte transfers).
+file.
+Limitation:   
+Copyright ©:  Lawrence Livermore National Laboratory
+---------------------------------------------------------
+---------------------------------------------------------
+
+REVISION HISTORY
+
+Date:         4/7/2023
+Author:       funsten1
+Description:  
+Purpose:      
+
+'''
 import serial    # For pyserial class
 import time      # For time delays
 import binascii  # For handling ASCII, hex conversions

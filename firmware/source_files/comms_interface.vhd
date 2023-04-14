@@ -34,6 +34,12 @@ entity comms_interface is
         clk_i    : in std_logic;  -- System clock.
         rst_i    : in std_logic;  -- Active-high push-button reset.
         
+        -- XADC
+        xadc_addr_o       : out std_logic_vector(7 downto 0);
+        xadc_out_i        : in std_logic_vector(15 downto 0);
+        xadc_data_valid_i : in std_logic;
+        xadc_enable_o     : out std_logic;
+        
         -- UART
         uart_rx_i   : in std_logic; -- Receive pin of USB UART.
         uart_tx_o   : out std_logic -- Transmit pin of USB UART.
@@ -87,6 +93,8 @@ begin
         uart_d_width => uart_d_width  
     )
     port map (
+    
+    -- UART
     -- Inputs
     clk_i        => clk_i,
     rst_i        => rst_i,
@@ -98,7 +106,13 @@ begin
     
      -- Outputs
      tx_ena_o    => tx_ena,
-     tx_data_o   => tx_data
+     tx_data_o   => tx_data,
+     
+     -- XADC
+     xadc_addr_o       => xadc_addr_o,
+     xadc_out_i        => xadc_out_i,
+     xadc_data_valid_i => xadc_data_valid_i,
+     xadc_enable_o     => xadc_enable_o
    );   
   
    

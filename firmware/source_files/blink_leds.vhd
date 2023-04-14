@@ -86,7 +86,7 @@ begin
     
     
     -- Finite state machine for RGB LED
-    rgb_led_proc : process(clk_1hz, rst_i, pwm_reg)	
+    rgb_led_proc : process(clk_1hz, rst_i)	
 	begin
 		if rst_i = '1' then
 		  led_state <= BLUE_STATE;

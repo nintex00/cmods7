@@ -1,3 +1,23 @@
+# -*- coding: utf-8 -*-
+'''
+File:         read_burst.py
+Author:       funsten1
+Description:  Reads an internally generated image set of four fraames with 
+1024 x 512 pixels with each pixel representing 2 bytes.
+file.
+Limitation:   
+Copyright ©:  Lawrence Livermore National Laboratory
+---------------------------------------------------------
+---------------------------------------------------------
+
+REVISION HISTORY
+
+Date:         4/7/2023
+Author:       funsten1
+Description:  
+Purpose:      
+
+'''
 import serial    # For pyserial class
 import time      # For time delays
 import binascii  # For handling ASCII, hex conversions

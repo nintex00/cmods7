@@ -2,7 +2,11 @@
 --
 -- File:         cmods7_top.vhd
 -- Author:       funsten1
--- Description:  Top level firmware for cmods7.
+-- Description:  Top level firmware for cmods7. The firmware
+-- exercises most if not all functionality on the cmods7 board
+-- from Digilent. The Spartan 7 FPGA used is the XC7S25-1CSGA225C.
+-- The purpose of this project is to showcase how to interface with 
+-- a FPGA for projects at LLNL.
 -- Limitation:   
 -- Copyright ©:  Lawrence Livermore National Laboratory
 --
@@ -30,7 +34,7 @@ entity cmods7_top is
     generic (
         sys_clk_freq : integer := 12_000_000; -- System clock frequency
         
-        fpga_rev     : std_logic_vector(23 downto 0) := x"230405"; -- Revision date.
+        fpga_rev     : std_logic_vector(23 downto 0) := x"230412"; -- Revision date.
         
         -- UART generics
         baud_rate    : integer := 1_000_000;  -- Baud rate in bits per second
@@ -82,11 +86,18 @@ architecture Behavioral of cmods7_top is
     signal sys_clk_12mhz : std_logic := '0'; -- Buffered 12 MHz from crystal oscillator.
     signal sys_rst       : std_logic;        -- Active-high reset.
     
-    signal tmr_test      : std_logic := '1'; 
+    signal tmr_test      : std_logic := '1'; -- TMR (Triple Modular Redundancy) test flag.
     
     -- Register pass through signals
-    signal data_reg_in                 : std_logic_vector(31 downto 0)  := (others => '0');
-    signal data_reg_out                : std_logic_vector(31 downto 0)  := (others => '0');  
+    signal data_reg_in                 : std_logic_vector(31 downto 0)  := (others => '0'); -- Data register for writing to an instantiated list of generated registers.
+    signal data_reg_out                : std_logic_vector(31 downto 0)  := (others => '0'); -- Data register for reading to an instantiated list of generated registers.
+    
+    -- XADC signals
+    signal xadc_addr       : std_logic_vector(7 downto 0) := (others => '0'); -- XADC address to read from.
+    signal xadc_out        : std_logic_vector(15 downto 0);                   -- XADC data out to write to UART.
+    signal xadc_data_valid : std_logic;                                       -- XADC valid flag from XADC state machine.
+    signal xadc_enable     : std_logic;                                       -- XADC enable flag from UART.
+    
 begin
    
      -- Clocks and resets module for handling clocks and resets.
@@ -133,19 +144,30 @@ begin
         clk_i  => sys_clk_12mhz,
         rst_i  => sys_rst,
      
+        -- XADC
+        xadc_addr_o       => xadc_addr,
+        xadc_out_i        => xadc_out,
+        xadc_data_valid_i => xadc_data_valid,
+        xadc_enable_o     => xadc_enable,
+        
         -- USB UART
         uart_rx_i => rs422_uart_rx_i, --usb_uart_rx_i,
         uart_tx_o => rs422_uart_tx_o  --usb_uart_tx_o
      ); 
 
-   -- XADC Interface
+   -- XADC Interface for reading temperature, and two auxilary voltages: VAUX5 and VAUX12.
    xadc_top_inst : entity work.xadc_top
      port map(
         -- Clocks and reset
         clk_i  => sys_clk_12mhz,
         rst_i  => sys_rst,
-     
-        -- XADC
+        
+        xadc_addr_i       => xadc_addr,
+        xadc_o            => xadc_out,
+        xadc_data_valid_o => xadc_data_valid,
+        xadc_enable_i     => xadc_enable,
+        
+        -- XADC dedicated pins
         vaux5p_i  => vaux5p_i,
         vaux5n_i  => vaux5n_i,
         vaux12p_i => vaux12p_i,

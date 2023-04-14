@@ -1,3 +1,23 @@
+# -*- coding: utf-8 -*-
+'''
+File:         read_bram.py
+Author:       funsten1
+Description:  Reads the internal FPGA's block ram (BRAM) and saves the data
+to a csv file and plots the data.
+file.
+Limitation:   
+Copyright ©:  Lawrence Livermore National Laboratory
+---------------------------------------------------------
+---------------------------------------------------------
+
+REVISION HISTORY
+
+Date:         4/7/2023
+Author:       funsten1
+Description:  
+Purpose:      
+
+'''
 import serial    # For pyserial class
 import time      # For time delays
 import binascii  # For handling ASCII, hex conversions

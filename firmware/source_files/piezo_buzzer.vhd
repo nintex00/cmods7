@@ -137,10 +137,6 @@ begin
                      else
                          play_flag <= '0';
 			         end if;
-			    
---			    when PLAY_TONE => 
-   
---                    melody_state <= DELAY_STATE;
                     
                 when DELAY_STATE =>
                     if note_index < 15 then

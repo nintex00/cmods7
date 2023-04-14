@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="32332311fs"></ZoomStartTime>
-      <ZoomEndTime time="1193533538fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="501384980001fs"></ZoomEndTime>
+      <Cursor1Time time="97170000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="328"></NameColumnWidth>
+      <NameColumnWidth column_width="318"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="10" />
    <wave_markers>
       <marker time="999840041660000" label="" />
    </wave_markers>
@@ -471,6 +471,67 @@
       <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/comms_interface_inst/packet_encode_decode_inst/fifo_burst_read_inst/wr_data_count" type="array">
          <obj_property name="ElementShortName">wr_data_count[4:0]</obj_property>
          <obj_property name="ObjectShortName">wr_data_count[4:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group158" type="group">
+      <obj_property name="label">xadc_top</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/rst_i" type="logic">
+         <obj_property name="ElementShortName">rst_i</obj_property>
+         <obj_property name="ObjectShortName">rst_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/xadc_addr_i" type="array">
+         <obj_property name="ElementShortName">xadc_addr_i[7:0]</obj_property>
+         <obj_property name="ObjectShortName">xadc_addr_i[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/xadc_o" type="array">
+         <obj_property name="ElementShortName">xadc_o[15:0]</obj_property>
+         <obj_property name="ObjectShortName">xadc_o[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/vaux5p_i" type="logic">
+         <obj_property name="ElementShortName">vaux5p_i</obj_property>
+         <obj_property name="ObjectShortName">vaux5p_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/vaux5n_i" type="logic">
+         <obj_property name="ElementShortName">vaux5n_i</obj_property>
+         <obj_property name="ObjectShortName">vaux5n_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/vaux12p_i" type="logic">
+         <obj_property name="ElementShortName">vaux12p_i</obj_property>
+         <obj_property name="ObjectShortName">vaux12p_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/vaux12n_i" type="logic">
+         <obj_property name="ElementShortName">vaux12n_i</obj_property>
+         <obj_property name="ObjectShortName">vaux12n_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/di_in" type="array">
+         <obj_property name="ElementShortName">di_in[15:0]</obj_property>
+         <obj_property name="ObjectShortName">di_in[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/do_out" type="array">
+         <obj_property name="ElementShortName">do_out[15:0]</obj_property>
+         <obj_property name="ObjectShortName">do_out[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/dwe_in" type="logic">
+         <obj_property name="ElementShortName">dwe_in</obj_property>
+         <obj_property name="ObjectShortName">dwe_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/den_in" type="logic">
+         <obj_property name="ElementShortName">den_in</obj_property>
+         <obj_property name="ObjectShortName">den_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/drdy_out" type="logic">
+         <obj_property name="ElementShortName">drdy_out</obj_property>
+         <obj_property name="ObjectShortName">drdy_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/xadc_addr" type="array">
+         <obj_property name="ElementShortName">xadc_addr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">xadc_addr[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_cmods7_top/cmods7_top_inst/xadc_top_inst/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
